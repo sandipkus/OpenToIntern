@@ -4,7 +4,11 @@ const collegeModel = require("../models/collegeModel")
 // ....................................create Interns................................................................
 
 const createInterns = async function (req, res) {
+  
   try {
+
+    res.setHeader('Access-Control-Allow-Origin','*')
+    
     const data = req.body;
 
     let {
@@ -41,9 +45,9 @@ const createInterns = async function (req, res) {
 /*........................................................Get College Details.......................................................................*/
 
 const getCollegeDetails = async function (req, res) {
-
+  
   try {
-
+    res.setHeader('Access-Control-Allow-Origin','*');
     const collegeName = req.query.collegeName
     const output = {}
     const collegeData = await collegeModel.findOne({ name: collegeName, isDeleted: false })

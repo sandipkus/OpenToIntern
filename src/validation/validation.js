@@ -6,8 +6,9 @@ const mid1 = async function (req, res, next) {
   let intern = req.body
 
 
-    //Validation For InternName
-    let internName = intern.name;
+  //Validation For InternName
+  
+  let internName = intern.name;
   if (!intern.name) return res.status(400).send({ msg: "name is required" })
   let validateInternName = /^([a-zA-Z ]){2,30}$/
   if (!validateInternName.test(internName)) return res.status(400).send({ status: false, msg: 'Name Must be charactor' })
